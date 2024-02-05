@@ -20,7 +20,8 @@
       "@/styles/*": ["styles/*"],
       "@/utils": ["utils/index.ts"],
       "@/hooks": ["hooks/index.ts"],
-      "@/types": ["types/index.ts"]
+      "@/types": ["types/index.ts"],
+      "@/contentful/*": ["contentful/*"]
     },
     "ignoreDeprecations": "5.0",
     "importsNotUsedAsValues": "error",

@@ -2,15 +2,15 @@ import { fetchPage } from '@/contentful/getPage';
 import RenderComponents from 'components/renderComponents';
 import { PageHead } from 'components/PageHead';
 
-export async function getServerSideProps({ res }) {
+export async function getServerSideProps({ params, res }) {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=60, stale-while-revalidate=299'
   );
 
-  const page = await fetchPage('home');
+  const { slug } = params;
 
-  console.log(page);
+  const page = await fetchPage(slug);
 
   if (!page) {
     return {
@@ -22,7 +22,7 @@ export async function getServerSideProps({ res }) {
   };
 }
 
-export default function Home({ seo, components }) {
+export default function Landing({ seo, components }) {
   return (
     <>
       <PageHead seo={seo} />
