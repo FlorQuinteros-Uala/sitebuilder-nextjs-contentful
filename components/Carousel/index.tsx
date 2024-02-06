@@ -5,9 +5,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Box } from '@uala/abra';
 import React from 'react';
 import Slider, { type Settings } from 'react-slick';
+import type { CarouselProps } from 'types/TypesCarousel';
 
 import { ArrowNext, ArrowPrev } from './Arrows';
-import type { CarouselProps } from 'types/TypesCarousel';
 
 const CustomSlide = (props: any) => {
   return (

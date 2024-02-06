@@ -2,9 +2,8 @@ import {
   ImageSection as ImageSectionComponent,
   PromoCard
 } from '@uala-labssupport/ui';
-
 import ModuloSlider from 'components/wrappers/Slider/ModuloSlider';
-import { Props, ModuleType } from 'types/TypesImageSection';
+import { ModuleType, Props } from 'types/TypesImageSection';
 
 export const ImageSection = ({
   colorDeTexto,

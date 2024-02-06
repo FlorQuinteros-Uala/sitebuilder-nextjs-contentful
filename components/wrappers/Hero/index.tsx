@@ -4,9 +4,9 @@ import {
 } from '@uala-labssupport/ui';
 import Image from 'next/image';
 import { useState } from 'react';
+import type { PropsComp } from 'types/TypesHero';
 
 import DownloadAppButton from '../../DownloadButton';
-import type { PropsComp } from 'types/TypesHero';
 
 enum HeroType {
   Home = 'Hero Home',

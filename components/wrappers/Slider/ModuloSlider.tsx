@@ -1,10 +1,8 @@
 import { Box, Container, Spacer, Stack, Title } from '@uala/abra';
 import { useBreakpoint } from '@uala/abra-utils';
+import Carousel from 'components/Carousel';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-
-import Carousel from 'components/Carousel';
-
 import type { Props } from 'types/TypesSlider';
 
 const ModuloSlider = ({

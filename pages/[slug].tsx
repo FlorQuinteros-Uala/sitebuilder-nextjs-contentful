@@ -1,5 +1,5 @@
 import { fetchPage } from '@/contentful/getPage';
-import RenderComponents from 'components/renderComponents';
+import RenderComponents from 'components/RenderComponents';
 import { PageHead } from 'components/PageHead';
 
 export async function getServerSideProps({ params, res }) {

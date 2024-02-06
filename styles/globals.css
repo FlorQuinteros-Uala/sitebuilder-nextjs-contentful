@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slider-container {
+  height: inherit !important;
+  margin: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots-custom-margin {
+  bottom: -45px !important;
+}
+
+.dot {
+  height: 10px !important;
+  width: 10px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  opacity: 0.2 !important;
+}
+
+.dots_custom li.slick-active {
+  width: 4vw !important;
+}
+
+.dots_custom li.slick-active span {
+  width: 4vw !important;
+  border-radius: 19px !important;
+  opacity: 1 !important;
+}
+
+.slick-prev--main {
+  left: 0 !important;
+}
+
+.slick-next--main {
+  right: 25px !important;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute !important;
+  top: 50% !important;
+  z-index: 10 !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: none !important;
+}
+
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled {
+  opacity: 0.5 !important;
+}
+
+.slick-list {
+  padding-bottom: 20px !important;
+}

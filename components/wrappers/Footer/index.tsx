@@ -1,10 +1,8 @@
 import { Footer as FooterComponent } from '@uala-labssupport/ui';
+import { nibPro } from 'fonts';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
-
 import type { FooterProps } from 'types/TypesFooter';
-
-import { nibPro } from 'fonts';
 
 import { footerContentCoverter } from '@/contentful/parsers';
 
@@ -19,7 +17,7 @@ const Disclaimer = ({ children }) => (
 );
 
 export const Footer = ({ componentName, ...rest }) => {
-  const { logo, claim, disclaimers, legalImages, columns } =
+  const { logo, claim, disclaimers, legalImages, columns }: FooterProps =
     footerContentCoverter(rest);
 
   const TITLE_CLASSNAME =
