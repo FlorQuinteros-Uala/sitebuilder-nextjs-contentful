@@ -5,6 +5,7 @@ import type {
   EntrySkeletonType,
   LocaleCode
 } from 'contentful';
+
 import type { TypeSitioWebSkeleton } from './TypeSitioWeb';
 
 export interface TypeNavbarItemFields {

@@ -2,6 +2,324 @@
 @tailwind components;
 @tailwind utilities;
 
+/* .slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 11px !important;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: 0.25;
+  color: #ffffff !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 10px;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #3a3a3a;
+}
+
+.legales-tarjeta-credito h4 {
+  font-size: 20px;
+  font-weight: 600px;
+}
+.legales-tarjeta-credito p {
+  font-size: 14px;
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-blue-250 border-2 border-blue-250 text-white hover:bg-blue-200 hover:border-blue-250;
+  }
+  .primary-btn:active {
+    @apply bg-blue-350 border-blue-350;
+  }
+
+  .secondary-btn {
+    @apply bg-transparent border-2 border-blue-250 text-blue-250 hover:bg-white hover:text-blue-200 hover:border-blue-200;
+  }
+  .secondary-btn:active {
+    @apply bg-white border-blue-350 text-blue-350;
+  }
+
+  .text-btn {
+    @apply bg-transparent text-blue-250 underline hover:text-blue-200;
+  }
+  .text-btn:active {
+    @apply text-blue-350;
+  }
+
+  .primary-bg-btn {
+    @apply bg-white text-blue-250 hover:bg-blue-50;
+  }
+  .primary-bg-btn:active {
+    @apply bg-blue-100;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title-1 {
+    @apply text-blue-250 font-bold;
+    font-size: 35px;
+    line-height: 41px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title-1 {
+    @apply text-blue-250 font-bold;
+    font-size: 45px;
+    line-height: 55px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .subtitle-1 {
+    @apply font-normal;
+    color: #737373;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .titleSection {
+    @apply font-semibold;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .subtitle-1 {
+    @apply text-gray-150 font-normal;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .titleSection {
+    @apply font-semibold;
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title-2 {
+    @apply text-4xl font-medium;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title-2 {
+    @apply text-3xl font-medium;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title-2-imgItem {
+    @apply text-4xl font-medium;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title-2-imgItem {
+    @apply text-3xl font-medium;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title-3 {
+    @apply text-2xl font-semibold;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title-3 {
+    @apply text-xl font-semibold;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cardContainer {
+    width: 365px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .cardContainer {
+    width: 100%;
+  }
+}
+
+.subtitle-2 {
+  @apply text-xl font-normal;
+}
+
+.subtitle-blue {
+  @apply text-2xl font-normal text-blue-250;
+}
+
+.text {
+  @apply text-lg leading-7;
+}
+
+.link {
+  @apply text-blue-350 underline;
+}
+
+.link-styled a {
+  @apply text-blue-250;
+  @apply underline;
+}
+
+p {
+  @apply my-4;
+}
+
+.menu-list {
+  @apply hidden;
+}
+
+.menu-option:hover .menu-list {
+  @apply block;
+}
+
+/* .slick-track {
+  display: flex;
+} */
+
+.reactMarkdown a {
+  @apply text-blue-300 underline;
+  text-align: justify;
+}
+
+.reactMarkdown h1 {
+  @apply text-blue-600;
+  padding: 1rem 0;
+}
+
+.reactMarkdown h2 {
+  @apply text-blue-600;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.reactMarkdown h3 {
+  @apply text-blue-600;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.reactMarkdown p {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.reactMarkdown ul {
+  @apply list-disc ml-6;
+}
+
+.reactMarkdown ol {
+  @apply list-decimal ml-6;
+}
+
+.reactMarkdown.child-image-centered img {
+  margin: auto;
+}
+
+.reactMarkdown-left p {
+  text-align: left;
+}
+
+.reactMarkdown-margin p {
+  margin-bottom: 1rem;
+}
+
+/* Slider Promotions */
+.SliderPromotionBanner {
+  position: relative;
+}
+.SliderPromotionBanner .slick-prev,
+.SliderPromotionBanner .slick-next {
+  position: absolute;
+  top: 50%;
+}
+.SliderPromotionBanner .slick-prev {
+  font-family: 'slick';
+  left: 3% !important;
+  z-index: 100;
+}
+.SliderPromotionBanner .slick-next {
+  font-family: 'slick';
+  right: 3% !important;
+  z-index: 100;
+}
+.SliderPromotionBanner .slick-dots {
+  z-index: 100;
+  position: absolute;
+  bottom: 10px;
+}
+
+.SliderPromotionBanner .slick-dots li button:before {
+  color: white !important;
+}
+
+.section {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 45px;
+  color: #757575;
+}
+
+.imageSectionTitle {
+  font-style: normal !important;
+  font-weight: 600 !important;
+  color: #3a3a3a !important;
+}
+
+.imageSectionSubitle {
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 30px;
+}
+
+.subtitleInvitarPin {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 31px;
+}
+
+.section-title {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 45px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.font {
+  font-family: 'Public Sans';
+}
+
+/* .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.2;
+}
+
+.dots-custom li.slick-active {
+  width: 4vw;
+}
+
+.dots-custom li.slick-active span {
+  width: 4vw !important;
+  border-radius: 19px;
+  opacity: 1;
+} */
+
 .slider-container {
   height: inherit !important;
   margin: 20px 20px;

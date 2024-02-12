@@ -8,12 +8,12 @@ import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main
-      className={`flex flex-col place-content-between min-h-screen overflow-x-hidden ${publicSans.className}`}
-    >
+    <main className={` ${publicSans.className}`}>
       <ThemeProvider brand={'uala'}>
         <AbraProvider>
-          <Component {...pageProps} />
+          <div className="flex flex-col place-content-between min-h-screen overflow-x-hidden">
+            <Component {...pageProps} />
+          </div>
         </AbraProvider>
       </ThemeProvider>
     </main>

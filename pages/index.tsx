@@ -1,6 +1,7 @@
-import { fetchPage } from '@/contentful/getPage';
-import RenderComponents from 'components/RenderComponents';
 import { PageHead } from 'components/PageHead';
+import RenderComponents from 'components/RenderComponents';
+
+import { fetchPage } from '@/contentful/getPage';
 
 export async function getServerSideProps({ res }) {
   res.setHeader(

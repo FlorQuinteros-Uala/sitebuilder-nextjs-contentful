@@ -1,5 +1,13 @@
+export type {
+  TypeFooter,
+  TypeFooterFields,
+  TypeFooterSkeleton
+} from './TypeFooter';
 export type { TypeLanding, TypeLandingSkeleton } from './TypeLanding';
-export type { TypeSitioWeb } from './TypeSitioWeb';
 export type { TypeLegalesYDocumentos } from './TypeLegalesYDocumentos';
-export type { TypeNavbar, TypeNavbarSkeleton } from './TypeNavbar';
-export type { TypeFooter, TypeFooterSkeleton } from './TypeFooter';
+export type {
+  TypeNavbar,
+  TypeNavbarFields,
+  TypeNavbarSkeleton
+} from './TypeNavbar';
+export type { TypeSitioWeb } from './TypeSitioWeb';

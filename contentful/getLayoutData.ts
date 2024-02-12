@@ -1,17 +1,12 @@
-import {
-  footerContentCoverter,
-  navbarContentConvertion
-} from '@/contentful/parsers';
-import { client } from './client';
-import { SITE_ID } from './constants';
 import type {
-  TypeNavbarSkeleton,
-  TypeFooterSkeleton
+  TypeFooterSkeleton,
+  TypeNavbarSkeleton
 } from '@/contentful/generated-types';
 
-import type { NavbarProps, FooterProps } from '@/types';
+import { client } from './client';
+import { SITE_ID } from './constants';
 
-const fetchFooter = async (): Promise<FooterProps | null> => {
+const fetchFooter = async (): Promise<Record<string, unknown> | null> => {
   try {
     const { items } = await client.getEntries<TypeFooterSkeleton>({
       content_type: 'footer',
@@ -20,16 +15,14 @@ const fetchFooter = async (): Promise<FooterProps | null> => {
       limit: 1
     });
 
-    const footer = items[0];
-
-    return footerContentCoverter(footer);
+    return items[0].fields;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return null;
   }
 };
 
-const fetchNavbar = async (): Promise<NavbarProps | null> => {
+const fetchNavbar = async (): Promise<Record<string, unknown> | null> => {
   try {
     const { items } = await client.getEntries<TypeNavbarSkeleton>({
       content_type: 'navbar',
@@ -38,10 +31,9 @@ const fetchNavbar = async (): Promise<NavbarProps | null> => {
       limit: 1
     });
 
-    const navbar = items[0];
-    return navbarContentConvertion(navbar);
+    return items[0].fields;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return null;
   }
 };
