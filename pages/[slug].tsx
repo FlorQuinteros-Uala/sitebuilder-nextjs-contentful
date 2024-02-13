@@ -1,6 +1,9 @@
-import { fetchPage } from '@/contentful/getPage';
-import RenderComponents from 'components/RenderComponents';
 import { PageHead } from 'components/PageHead';
+import RenderComponents from 'components/RenderComponents';
+import RenderLegalDocument from 'components/RenderLegalDocument';
+
+import { fetchPage } from '@/contentful/fetchPage';
+import { fetchLegalDocument } from '@/contentful/fetchPDF';
 
 export async function getServerSideProps({ params, res }) {
   res.setHeader(
@@ -10,23 +13,34 @@ export async function getServerSideProps({ params, res }) {
 
   const { slug } = params;
 
-  const page = await fetchPage(slug);
+  const [page, pdf] = await Promise.all([
+    fetchPage(slug),
+    fetchLegalDocument(slug)
+  ]);
 
-  if (!page) {
+  if (!page && !pdf) {
     return {
       notFound: true
     };
   }
+
   return {
-    props: page
+    props: {
+      type: page ? 'landing' : 'legalDocument',
+      data: page || pdf
+    }
   };
 }
 
-export default function Landing({ seo, components }) {
+export default function Landing({ type, data }) {
   return (
     <>
-      <PageHead seo={seo} />
-      <RenderComponents content={components} />
+      <PageHead seo={data.seo} />
+      {type === 'landing' ? (
+        <RenderComponents content={data.components} />
+      ) : (
+        <RenderLegalDocument {...data} />
+      )}
     </>
   );
 }

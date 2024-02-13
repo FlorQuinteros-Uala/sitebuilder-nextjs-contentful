@@ -20,6 +20,10 @@
   margin-top: 10px;
 } */
 
+iframe {
+  width: 100%; /* for responsiveness */
+}
+
 body {
   margin: 0;
   padding: 0;
