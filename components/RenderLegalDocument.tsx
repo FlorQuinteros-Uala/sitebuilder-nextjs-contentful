@@ -33,9 +33,6 @@ const RenderLegalDocument = ({
         />
       </header>
       <section className="m-auto max-w-screen-xl">
-        {/* {title && (
-          <h2 className="font-bold text-blue-250 text-4xl mb-5">{title}</h2>
-        )} */}
         {content && <Paragraph text={content} />}
         {extraContent && <Paragraph text={extraContent} />}
       </section>
