@@ -11,6 +11,15 @@ const nextConfig = {
         hostname: 'images.ctfassets.net'
       }
     ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true
+      }
+    ];
   }
 };
 
