@@ -1,4 +1,4 @@
-import type { ContentfulStruct } from '@/types/TypeTemp';
+import type { ContentfulStruct } from '../generated-types';
 
 export const imageContentConverter = (imageContent: ContentfulStruct) => {
   return {

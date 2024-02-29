@@ -9,16 +9,17 @@ export async function getStaticProps() {
       notFound: true
     };
   }
+
   return {
     props: page
   };
 }
 
-export default function Custom404({ page, seo }) {
+export default function Custom404({ seo, components }) {
   return (
     <>
       <PageHead seo={seo} />
-      <RenderComponents content={page.components} />
+      <RenderComponents content={components} />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { fetchEntry } from './fetchEntry';
+import type { ContentfulStruct } from './generated-types';
 
 export async function getWebInfo() {
   const data = {
@@ -9,8 +10,13 @@ export async function getWebInfo() {
   const info = await fetchEntry('6uOKLXobfwn3LyjD9M1k8E');
 
   if (info !== null) {
-    data.robotsUrl = `https:${info.fields.robotsTxt.fields.file.url}`;
-    data.sitemapUrl = `https:${info.fields.sitemap.fields.file.url}`;
+    const robotsUrl = (info.fields.robotsTxt as unknown as ContentfulStruct)
+      ?.fields?.file?.url;
+    const sitemapUrl = (info.fields.sitemap as unknown as ContentfulStruct)
+      ?.fields?.file?.url;
+
+    data.robotsUrl = `https:${robotsUrl}`;
+    data.sitemapUrl = `https:${sitemapUrl}`;
   }
 
   return {
