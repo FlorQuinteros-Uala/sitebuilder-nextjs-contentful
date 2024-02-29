@@ -24,13 +24,11 @@ export const Navbar = ({ componentName, ...rest }) => {
     navbarContentConvertion(rest);
 
   return (
-    <header>
-      <NavbarComponent
-        logo={logo}
-        menuOptions={menuOptions}
-        actionButton={actionButton}
-        mobileMenuItem={<MobileMenuItem />}
-      />
-    </header>
+    <NavbarComponent
+      logo={logo}
+      menuOptions={menuOptions}
+      actionButton={actionButton}
+      mobileMenuItem={<MobileMenuItem />}
+    />
   );
 };

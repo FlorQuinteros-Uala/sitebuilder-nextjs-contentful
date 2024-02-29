@@ -3,7 +3,7 @@ import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang="es">
+    <Html lang="es" dir="ltr">
       <Head>
         <style
           id="stitches"
