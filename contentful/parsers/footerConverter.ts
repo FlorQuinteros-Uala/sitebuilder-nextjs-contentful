@@ -5,28 +5,28 @@ import type {
   Vertical
 } from 'types/TypesFooter';
 
-export const footerContentCoverter = (content): FooterProps => {
+export const footerContentCoverter = (footerContent): FooterProps => {
   const footerLogo: Logo = {
-    id: content?.logo?.sys?.id,
-    url: `https:${content?.logo?.fields?.file?.url}` || '',
-    alt: content?.logo?.fields?.description || '',
+    id: footerContent?.logo?.sys?.id,
+    url: `https:${footerContent?.logo?.fields?.file?.url}` || '',
+    alt: footerContent?.logo?.fields?.description || '',
     width: 55,
     height: 27
   };
 
-  const legalImages: LegalImage[] = content?.footerLegalImages.map(
+  const legalImages: LegalImage[] = footerContent?.footerLegalImages.map(
     ({ fields, sys }) => {
       return {
         id: sys.id,
         src: `https:${fields.file.url}`,
         alt: fields.title,
-        url: fields.description
+        url: fields.description ?? ''
       };
     }
   );
 
   const verticals: Vertical[] =
-    content?.footerVerticals?.map(({ fields, sys }) => {
+    footerContent?.footerVerticals?.map(({ fields, sys }) => {
       return {
         id: sys.id,
         title: fields.nombreDeVertical,
@@ -42,8 +42,13 @@ export const footerContentCoverter = (content): FooterProps => {
               tag: fields.llevaTag,
               image: fields.esUnItemConImagen
                 ? {
-                    src: fields.imagenDelItem?.fields?.file?.url || '',
-                    alt: fields.imagenDelItem?.fields?.description || ''
+                    src:
+                      `https:${fields.imagenDelItem?.fields?.file?.url}` || '',
+                    alt: fields.imagenDelItem?.fields?.description || '',
+                    width:
+                      fields.imagenDelItem?.fields?.file?.details?.image.width,
+                    height:
+                      fields.imagenDelItem?.fields?.file?.details?.image.height
                   }
                 : null
             };
@@ -53,9 +58,9 @@ export const footerContentCoverter = (content): FooterProps => {
 
   return {
     logo: footerLogo,
-    claim: content?.claimMarca,
+    claim: footerContent?.claimMarca,
     legalImages,
-    disclaimers: content?.footerDisclaimer || '',
+    disclaimers: footerContent?.footerDisclaimer || '',
     columns: Object.values(
       verticals.reduce((acc, current) => {
         acc[current.order] = acc[current.order] ?? [];

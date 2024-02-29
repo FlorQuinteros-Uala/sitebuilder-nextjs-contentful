@@ -35,6 +35,7 @@ export const Footer = ({ componentName, ...rest }) => {
             alt={logo.alt}
             width={logo.width}
             height={logo.height}
+            style={{ width: logo.width, height: logo.height }}
           />
           <ReactMarkdown
             components={{ p: 'h5', em: ClaimCoral }}
@@ -50,7 +51,7 @@ export const Footer = ({ componentName, ...rest }) => {
               key={i}
             >
               {c.map((a) => (
-                <div className="flex flex-col gap-[7px] w-full" key={a.id}>
+                <nav className="flex flex-col gap-[7px] w-full" key={a.id}>
                   {a.url === null ? (
                     <p className={TITLE_CLASSNAME}>{a.title}</p>
                   ) : (
@@ -92,18 +93,19 @@ export const Footer = ({ componentName, ...rest }) => {
                           </>
                         )}
                         {item.image !== null && (
-                          <a
-                            href={item.url ?? ''}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <img src={item.image.src} alt={item.image.alt} />
+                          <a href={item.url} target="_blank" rel="noreferrer">
+                            <Image
+                              src={item.image.src}
+                              alt={item.image.alt}
+                              width={item.image.width}
+                              height={item.image.width}
+                            />
                           </a>
                         )}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </nav>
               ))}
             </div>
           ))}
@@ -112,11 +114,25 @@ export const Footer = ({ componentName, ...rest }) => {
           <ReactMarkdown components={{ p: Disclaimer }}>
             {disclaimers}
           </ReactMarkdown>
-          {legalImages.map((image) => (
-            <a key={image.id} href={image.url} target="_blank" rel="noreferrer">
-              <Image src={image.src} alt={image.alt} width={80} height={44} />
-            </a>
-          ))}
+          <div className="flex gap-[30px] md:gap-x-[25px] flex-wrap">
+            {legalImages.map(({ id, url, src, alt }) => (
+              <a
+                key={id}
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center w-max"
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={80}
+                  height={40}
+                  style={{ width: 80, height: 40 }}
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </FooterComponent>

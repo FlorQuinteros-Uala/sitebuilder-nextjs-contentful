@@ -1,8 +1,13 @@
+export { Accordion } from './Accordion';
 export { Banner } from './Banner';
+export { CardsColumn } from './CardsColumn';
 export { Container } from './Container';
 export { Faq } from './Faq';
+export { Footer } from './Footer';
 export { Hero } from './Hero';
 export { ImageSection } from './ImageSection';
+export { ListContainer } from './ListContainer';
 export { Navbar } from './Navbar';
+export { Paragraph } from './Paragraph';
 export { Slider } from './Slider';
-export { Footer } from './Footer';
+export { VideoSection } from './VideoSection';

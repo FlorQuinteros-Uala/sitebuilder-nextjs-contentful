@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { Fragment } from 'react';
 
-const MainSlider = ({ sliderContent }) => {
+export const MainSlider = ({ sliderContent }) => {
   const isDesktop = useBreakpoint('lg');
 
   return (
@@ -62,5 +62,3 @@ const MainSlider = ({ sliderContent }) => {
     </Carousel>
   );
 };
-
-export default MainSlider;

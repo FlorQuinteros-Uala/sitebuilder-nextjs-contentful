@@ -2,7 +2,7 @@ import {
   ImageSection as ImageSectionComponent,
   PromoCard
 } from '@uala-labssupport/ui';
-import ModuloSlider from 'components/wrappers/Slider/ModuloSlider';
+import { ModuloSlider } from 'components/Sliders';
 import { ModuleType, Props } from 'types/TypesImageSection';
 
 export const ImageSection = ({
@@ -45,6 +45,8 @@ export const ImageSection = ({
     reverse: textoALaIzquierda,
     titleColor: colorDeTexto,
     backgroundColor: colorDeFondo,
+    textColor: colorDeTexto,
+    roundedImage: true,
     image: {
       url: imagen?.fields?.file?.url || '',
       alt: imagen?.fields?.description || ''

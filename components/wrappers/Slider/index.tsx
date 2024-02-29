@@ -1,10 +1,14 @@
-import { VerticalCard } from '@uala-labssupport/ui';
+import { MainSlider, ModuloSlider } from 'components/Sliders';
 
-import MainSlider from './MainSlider';
-import ModuloSlider from './ModuloSlider';
+import { CardMap } from '../Cards/index';
+
+enum Types {
+  Main = 'MainSlider',
+  Promotion = 'Cards promociones'
+}
 
 export const Slider = (props) => {
-  if (props.sliderType !== 'MainSlider') {
+  if (props.sliderType !== Types.Main) {
     const {
       sliderTitle,
       colorDeTexto,
@@ -12,13 +16,15 @@ export const Slider = (props) => {
       colordeFondoSecundario,
       esUnGradient,
       llevaColorDeFondo,
-      sliderType
+      sliderContent,
+      sliderType,
+      cantidadDeInstanciasVisibles
     } = props;
 
     const ModuloProps = {
       title: sliderTitle ?? '',
       description: '',
-      cardsToShow: 3,
+      cardsToShow: cantidadDeInstanciasVisibles ?? 3,
       css: {
         text: {
           color: colorDeTexto
@@ -74,20 +80,14 @@ export const Slider = (props) => {
 
     return (
       <ModuloSlider {...ModuloProps}>
-        {/* TO-DO: conectar las cards que correspondan cuando se resuelva el bloqueante de Contentful */}
-        {Array.from({ length: 6 }, (_, index) => (
-          <VerticalCard
-            key={index}
-            content={{
-              title: 'Titular de card que puede tener hasta 2 líneas',
-              paragraph: 'Titular de card que puede tener hasta 2 líneas'
-            }}
-            img={{
-              url: 'https://placekitten.com/90/90',
-              alt: 'Placeholder'
-            }}
-          />
-        ))}
+        {sliderContent &&
+          sliderContent.map(({ fields, sys }) => {
+            const CardComponent =
+              sliderType === Types.Promotion
+                ? CardMap['PromoCard']
+                : CardMap[fields.componentName];
+            return <CardComponent key={sys.id} {...fields} />;
+          })}
       </ModuloSlider>
     );
   }

@@ -28,5 +28,5 @@ export type PropsComp = {
   bgColor?: string;
   modalButton?: React.JSX.Element;
   openModal?: any;
-  titleColor?: string;
+  typographyColor?: string;
 };

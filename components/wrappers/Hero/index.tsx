@@ -2,11 +2,11 @@ import {
   Hero as HeroComponent,
   Modal as ModalHero
 } from '@uala-labssupport/ui';
+import DownloadAppButton from 'components/DownloadButton';
 import Image from 'next/image';
 import { useState } from 'react';
-import type { PropsComp } from 'types/TypesHero';
 
-import DownloadAppButton from '../../DownloadButton';
+import type { PropsComp } from '@/types';
 
 enum HeroType {
   Home = 'Hero Home',
@@ -27,10 +27,12 @@ export const Hero = ({
   colorDeBoton,
   colorTextoBoton,
   imagenPrincipal,
+  imagen,
   llevaAntettulo,
   antetitulo,
   abreModal,
-  cargarModal
+  cargarModal,
+  colorDeTipografa
 }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const dataLayerInfo = {
@@ -46,6 +48,7 @@ export const Hero = ({
     imagenPrincipal[1]?.fields?.file?.url;
 
   const imageMain = imagenPrincipal && imagenPrincipal[0]?.fields?.file;
+  const imageHeroProduct = imagen && imagen?.fields?.file?.url;
 
   const btnProps = llevaBotn && {
     text: textoDelBotn,
@@ -61,12 +64,13 @@ export const Hero = ({
     mobileInverted: true,
     title: titulo,
     paragraph: descripcion,
+    typographyColor: colorDeTipografa,
     section: section,
     darkBg: llevaFondoDeColor,
     bgColor: colorDeFondo,
     hasButton: llevaBotn,
     transparencyImage,
-    isFullImage: true,
+    isFullImage: componentName === HeroType.Landing,
     brandUala: true,
     image: (
       <Image
@@ -74,6 +78,7 @@ export const Hero = ({
         alt={imageMain.description}
         width={imageMain.details?.image?.width}
         height={imageMain.details?.image?.height}
+        priority
       />
     ),
     bgImageSrc: imageMain.url,
@@ -103,11 +108,15 @@ export const Hero = ({
           ...general,
           isHome: true,
           mobileInverted: false,
-          roundedImage: false
+          roundedImage: false,
+          isFullImage: true
         }
       : componentName === HeroType.ProductLanding
       ? {
           ...general,
+          roundedImage: true,
+          isFullImage: true,
+          bgImageSrc: imageHeroProduct ? `https:${imageHeroProduct}` : '',
           curvedImage: true
         }
       : {

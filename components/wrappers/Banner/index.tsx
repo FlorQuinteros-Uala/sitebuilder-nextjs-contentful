@@ -7,7 +7,8 @@ export const Banner = ({
   BannerFileMobile,
   bannerFileDekstop,
   cta,
-  bannerHref
+  bannerHref,
+  inverted
 }) => {
   return (
     <Container layout="100">
@@ -22,7 +23,7 @@ export const Banner = ({
           url: BannerFileMobile?.fields?.file?.url,
           alt: BannerFileMobile?.fields?.description
         }}
-        inverted
+        inverted={!inverted}
         description={prrafo}
       />
     </Container>

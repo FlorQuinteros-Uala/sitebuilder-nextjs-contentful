@@ -5,7 +5,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import type { Props } from 'types/TypesSlider';
 
-const ModuloSlider = ({
+export const ModuloSlider = ({
   title,
   description,
   children,
@@ -70,5 +70,3 @@ const ModuloSlider = ({
     </Box>
   );
 };
-
-export default ModuloSlider;

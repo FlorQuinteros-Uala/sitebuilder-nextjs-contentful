@@ -13,6 +13,7 @@ export type Props = {
   reverse?: boolean;
   backgroundColor?: string;
   titleColor?: string;
+  textColor?: string;
 };
 
 export enum ModuleType {
