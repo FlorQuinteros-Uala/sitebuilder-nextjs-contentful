@@ -1,9 +1,5 @@
-import { PageHead } from 'components/PageHead';
-import RenderComponents from 'components/RenderComponents';
-import RenderLegalDocument from 'components/RenderLegalDocument';
-
-import { fetchPage } from '@/contentful/fetchPage';
-import { fetchLegalDocument } from '@/contentful/fetchPDF';
+import { PageHead, RenderComponents, RenderLegalDocument } from '@/components';
+import { fetchLegalDocument, fetchPage } from '@/lib';
 
 export async function getServerSideProps({ params, res }) {
   res.setHeader(

@@ -2,9 +2,9 @@ import type {
   ChainModifiers,
   Entry,
   EntryFieldTypes,
-  EntrySkeletonType,
-  LocaleCode
+  EntrySkeletonType
 } from 'contentful';
+
 import type { TypeSitioWebSkeleton } from './TypeSitioWeb';
 
 export interface TypeLandingFields {

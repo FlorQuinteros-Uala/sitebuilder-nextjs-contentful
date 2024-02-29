@@ -24,7 +24,7 @@ const CustomSlide = (props: any) => {
   );
 };
 
-const Carousel = ({
+export const Carousel = ({
   children,
   arrows = true,
   dots = true,
@@ -115,5 +115,3 @@ const Carousel = ({
     </Slider>
   );
 };
-
-export default Carousel;

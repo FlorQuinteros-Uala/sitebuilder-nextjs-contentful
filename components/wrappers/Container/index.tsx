@@ -1,7 +1,8 @@
 import { Container as ContainerAbra } from '@uala/abra';
 import PromotionsGrid from 'components/Promociones/PromotionsGrid';
 import SumateGrid from 'components/Sumate/SumateGrid';
-import { formatPromotions } from 'utils/Promotions';
+
+import { formatPromotions } from '@/utils';
 
 export const Container = (fields) => {
   if (fields.promociones) {

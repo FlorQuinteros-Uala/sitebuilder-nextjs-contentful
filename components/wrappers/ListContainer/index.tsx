@@ -1,7 +1,7 @@
 import { Container } from '@uala/abra';
 import { ListContainer as ListContainerComponent } from '@uala-labssupport/ui';
 
-import type { TypeContainerListasFields } from '@/contentful/generated-types/TypeContainerListas';
+import type { TypeContainerListasFields } from '@/lib/types';
 
 enum Type {
   Ordered = 'Lista ordenada',

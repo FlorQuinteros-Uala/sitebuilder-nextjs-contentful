@@ -2,7 +2,7 @@ import {
   Hero as HeroComponent,
   Modal as ModalHero
 } from '@uala-labssupport/ui';
-import DownloadAppButton from 'components/DownloadButton';
+import { DownloadAppButton } from 'components/DownloadButton';
 import Image from 'next/image';
 import { useState } from 'react';
 

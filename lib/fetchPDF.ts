@@ -1,7 +1,10 @@
 import type { Entry } from 'contentful';
 
 import { client } from './client';
-import type { TypeLegalesYDocumentosSkeleton } from './generated-types/TypeLegalesYDocumentos';
+import type {
+  ContentfulStruct,
+  TypeLegalesYDocumentosSkeleton
+} from './generated-types';
 
 type LegalDocumentEntry = Entry<
   TypeLegalesYDocumentosSkeleton,
@@ -37,11 +40,17 @@ const parseLegalDocument = (
     type: entry.fields.documentContent ? 'markdown' : 'file',
     content: entry.fields.documentContent ?? null,
     extraContent: entry.fields.documentContentExtra ?? null,
-    file: entry.fields.documentFile?.fields?.file?.url ?? null,
+    file:
+      (entry.fields.documentFile as unknown as ContentfulStruct).fields?.file
+        ?.url ?? null,
     logo: entry.fields.documentLogo
       ? {
-          src: entry.fields.documentLogo?.fields?.file?.url || '',
-          alt: entry.fields.documentLogo?.fields?.title || ''
+          src:
+            (entry.fields.documentLogo as unknown as ContentfulStruct)?.fields
+              ?.file?.url || '',
+          alt:
+            (entry.fields.documentLogo as unknown as ContentfulStruct).fields
+              ?.title || ''
         }
       : null
   };

@@ -3,7 +3,7 @@ import { Accordion as AccordionComponent } from '@uala-labssupport/ui';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 
-import type { TypeContainerDesplegableFields } from '@/contentful/generated-types/TypeContainerDesplegable';
+import type { TypeContainerDesplegableFields } from '@/lib/types';
 import type { Icon, Params } from '@/types';
 
 export const Accordion = ({

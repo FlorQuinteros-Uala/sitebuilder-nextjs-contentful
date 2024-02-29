@@ -1,7 +1,6 @@
 import { Card } from '@uala-labssupport/ui';
 
-import type { TypeCardsFields } from '@/contentful/generated-types/TypeCards';
-import type { ContentfulStruct } from '@/contentful/generated-types/TypeTemp';
+import type { ContentfulStruct, TypeCardsFields } from '@/lib/types';
 
 export const Horizontal = (props: TypeCardsFields): JSX.Element => {
   return (

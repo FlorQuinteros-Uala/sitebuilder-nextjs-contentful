@@ -1,8 +1,9 @@
 import type { CSS } from '@stitches/react';
 import type { Settings } from 'react-slick';
+
 import type { CarouselProps } from './TypesCarousel';
 
-export interface Props {
+export interface SliderProps {
   title?: string;
   description?: string;
   children?: React.ReactNode[];

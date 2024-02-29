@@ -1,7 +1,6 @@
 import { PromoCard } from '@uala-labssupport/ui';
 
-import type { TypePromotionFields } from '@/contentful/generated-types/TypePromotion';
-import type { ContentfulStruct } from '@/contentful/generated-types/TypeTemp';
+import type { ContentfulStruct, TypePromotionFields } from '@/lib/types';
 
 export const Promotion = ({
   previewTitle,

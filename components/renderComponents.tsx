@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 
 import * as components from './wrappers';
 
-const RenderComponents = ({ content }) => {
+export const RenderComponents = ({ content }) => {
   if (!content) return null;
 
   return content
@@ -23,5 +23,3 @@ const RenderComponents = ({ content }) => {
       return <Component key={id} {...rest} />;
     });
 };
-
-export default RenderComponents;

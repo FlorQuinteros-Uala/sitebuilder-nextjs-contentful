@@ -1,4 +1,4 @@
-import { getWebInfo } from '@/contentful/getWebInfo';
+import { getWebInfo } from '@/lib';
 
 export async function getServerSideProps({ res }) {
   const { data } = await getWebInfo();

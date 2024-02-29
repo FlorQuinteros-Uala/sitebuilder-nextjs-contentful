@@ -17,7 +17,7 @@ type ButtonProps = {
   children?: React.ReactNode;
 };
 
-const DownloadAppButton: React.FC<ButtonProps> = ({
+export const DownloadAppButton: React.FC<ButtonProps> = ({
   mobileLink,
   dataLayerContent,
   cbOpenModal,
@@ -50,5 +50,3 @@ const DownloadAppButton: React.FC<ButtonProps> = ({
     </Button>
   );
 };
-
-export default DownloadAppButton;

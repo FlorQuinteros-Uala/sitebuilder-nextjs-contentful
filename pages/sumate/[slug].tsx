@@ -1,11 +1,11 @@
 import { Box, Container, Stack, Text, Title } from '@uala/abra';
-import { PageHead } from 'components/PageHead';
 import { Footer, Navbar } from 'components/wrappers';
 import Script from 'next/script';
 import React from 'react';
-import { getPositionsData } from 'utils/comeet/getPositionsData';
 
-import { fetchFooter, fetchNavbar } from '@/contentful/getLayoutData';
+import { PageHead } from '@/components';
+import { fetchFooter, fetchNavbar } from '@/lib';
+import { getPositionsData } from '@/utils';
 
 const Details = ({ title, value }) => (
   <Stack

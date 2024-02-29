@@ -5,3 +5,5 @@ export * from './TypesFooter';
 export * from './TypesHero';
 export * from './TypesImageSection';
 export * from './TypesNavbar';
+export * from './TypesPromotion';
+export * from './TypesSlider';

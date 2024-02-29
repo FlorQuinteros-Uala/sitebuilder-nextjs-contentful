@@ -8,7 +8,8 @@
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -21,11 +22,12 @@
       "@/utils": ["utils/index.ts"],
       "@/hooks": ["hooks/index.ts"],
       "@/types": ["types/index.ts"],
-      "@/contentful/*": ["contentful/*"]
+      "@/lib": ["lib/index.ts"],
+      "@/lib/types": ["lib/generated-types/index.ts"],
+      "@/lib/parsers": ["lib/parsers/index.ts"]
     },
     "ignoreDeprecations": "5.0",
     "importsNotUsedAsValues": "error",
-    "target": "es6",
     "plugins": [
       {
         "name": "next"

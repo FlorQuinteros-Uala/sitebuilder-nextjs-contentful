@@ -3,7 +3,8 @@ import {
   PromoCard
 } from '@uala-labssupport/ui';
 import { ModuloSlider } from 'components/Sliders';
-import { ModuleType, Props } from 'types/TypesImageSection';
+
+import { ModuleType, Props } from '@/types';
 
 export const ImageSection = ({
   colorDeTexto,

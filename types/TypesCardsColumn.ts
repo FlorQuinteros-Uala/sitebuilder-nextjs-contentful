@@ -1,4 +1,4 @@
-import type { TypeCardsFields } from '@/contentful/generated-types/TypeCards';
+import type { TypeCardsFields } from 'lib/generated-types/TypeCards';
 
 type CTA = {
   title: string;

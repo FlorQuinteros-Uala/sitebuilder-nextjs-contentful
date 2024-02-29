@@ -1,6 +1,5 @@
 import type { Entry } from 'contentful';
-
-import type { TypeLandingSkeleton } from '@/contentful/generated-types';
+import type { TypeLandingSkeleton } from 'lib/generated-types';
 
 import { client } from './client';
 
@@ -32,7 +31,7 @@ const parseLanding = (landingEntry: LandingEntry): Landing | null => {
       (acc: object[], current) => {
         acc.push({
           //@ts-ignore
-          ...current.fields,
+          ...current?.fields,
           id: current.sys.id
         });
 

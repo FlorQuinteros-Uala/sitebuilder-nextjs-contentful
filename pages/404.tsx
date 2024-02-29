@@ -1,7 +1,5 @@
-import { PageHead } from 'components/PageHead';
-import RenderComponents from 'components/RenderComponents';
-
-import { fetchPage } from '@/contentful/fetchPage';
+import { PageHead, RenderComponents } from '@/components';
+import { fetchPage } from '@/lib';
 
 export async function getStaticProps() {
   const page = await fetchPage('error');

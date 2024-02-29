@@ -2,7 +2,7 @@ import { Container } from '@uala/abra';
 import { useBreakpoint } from '@uala/abra-utils';
 import { VideoSection as VideoSectionComponent } from '@uala-labssupport/ui';
 
-import type { TypeModuloVideoFields } from '@/contentful/generated-types/TypeModuloVideo';
+import type { TypeModuloVideoFields } from '@/lib/types';
 
 enum Types {
   Thumbnail = 'Video Thumbnail',

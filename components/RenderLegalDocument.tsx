@@ -1,7 +1,7 @@
 import { Paragraph } from '@uala-labssupport/ui';
 import Image from 'next/image';
 
-const RenderLegalDocument = ({
+export const RenderLegalDocument = ({
   type,
   seo,
   file,
@@ -39,5 +39,3 @@ const RenderLegalDocument = ({
     </main>
   );
 };
-
-export default RenderLegalDocument;

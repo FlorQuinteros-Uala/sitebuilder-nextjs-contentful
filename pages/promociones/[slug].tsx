@@ -1,5 +1,4 @@
 import { Container, Icon } from '@uala/abra';
-import { PageHead } from 'components/PageHead';
 import {
   OnePromotionSelected,
   TwoPromotionSelected
@@ -7,8 +6,8 @@ import {
 import { Footer, Navbar } from 'components/wrappers';
 import Link from 'next/link';
 
-import { fetchFooter, fetchNavbar } from '@/contentful/getLayoutData';
-import { getPromotionPageData } from '@/contentful/getPromotionPageData';
+import { PageHead } from '@/components';
+import { fetchFooter, fetchNavbar, getPromotionPageData } from '@/lib';
 
 export async function getServerSideProps({ params, res }) {
   res.setHeader(

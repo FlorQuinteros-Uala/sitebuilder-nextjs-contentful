@@ -1,8 +1,8 @@
 import { Navbar as NavbarComponent } from '@uala-labssupport/ui';
 import React from 'react';
-import type { NavbarProps } from 'types/TypesNavbar';
 
-import { navbarContentConvertion } from '@/contentful/parsers';
+import { navbarContentConvertion } from '@/lib/parsers';
+import type { NavbarProps } from '@/types';
 
 const MobileMenuItem = () => (
   <span

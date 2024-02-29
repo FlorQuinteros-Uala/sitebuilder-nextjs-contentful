@@ -1,7 +1,7 @@
 import type {
   TypeFooterSkeleton,
   TypeNavbarSkeleton
-} from '@/contentful/generated-types';
+} from 'lib/generated-types';
 
 import { client } from './client';
 import { SITE_ID } from './constants';

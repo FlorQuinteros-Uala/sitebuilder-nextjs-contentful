@@ -1,6 +1,6 @@
 import { Box } from '@uala/abra';
 import { useBreakpoint } from '@uala/abra-utils';
-import Carousel from 'components/Carousel';
+import { Carousel } from 'components/Carousel';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { Fragment } from 'react';

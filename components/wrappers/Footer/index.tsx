@@ -2,9 +2,9 @@ import { Footer as FooterComponent } from '@uala-labssupport/ui';
 import { nibPro } from 'fonts';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
-import type { FooterProps } from 'types/TypesFooter';
 
-import { footerContentCoverter } from '@/contentful/parsers';
+import { footerContentCoverter } from '@/lib/parsers';
+import type { FooterProps } from '@/types';
 
 const ClaimCoral = ({ children }) => (
   <em className={`text-[#FF5874] ${nibPro.className}`}>{children}</em>

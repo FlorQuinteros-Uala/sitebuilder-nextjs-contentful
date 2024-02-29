@@ -1,9 +1,10 @@
 import { Box, Container, Spacer, Stack, Title } from '@uala/abra';
 import { useBreakpoint } from '@uala/abra-utils';
-import Carousel from 'components/Carousel';
+import { Carousel } from 'components/Carousel';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import type { Props } from 'types/TypesSlider';
+
+import type { SliderProps } from '@/types';
 
 export const ModuloSlider = ({
   title,
@@ -12,7 +13,7 @@ export const ModuloSlider = ({
   cardsToShow,
   css,
   carouselSettings
-}: Props) => {
+}: SliderProps) => {
   const isDesktop = useBreakpoint('lg');
 
   return (

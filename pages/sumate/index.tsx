@@ -1,8 +1,6 @@
-import { PageHead } from 'components/PageHead';
-import RenderComponents from 'components/RenderComponents';
-import { getPositionsData } from 'utils/comeet/getPositionsData';
-
-import { fetchPage } from '@/contentful/fetchPage';
+import { PageHead, RenderComponents } from '@/components';
+import { fetchPage } from '@/lib';
+import { getPositionsData } from '@/utils';
 
 export async function getServerSideProps({ res }) {
   res.setHeader(

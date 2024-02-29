@@ -1,7 +1,7 @@
 import { Container } from '@uala/abra';
 import { Paragraph as ParagraphComponent } from '@uala-labssupport/ui';
 
-import type { Props } from '@/contentful/generated-types/TypeParagraph';
+import type { Props } from '@/lib/types';
 
 export const Paragraph = ({
   parrafoTitle,
